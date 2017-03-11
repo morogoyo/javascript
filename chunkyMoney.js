@@ -6,6 +6,7 @@ function chunkArrayInGroups(arr, size) {
   		newArray.push()
   	}
   }
+  console.log(newArray);
   return arr;
 }
 
