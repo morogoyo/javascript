@@ -11,7 +11,10 @@ romanTens = ["X","XX","XXX","XL","L","LX","LXX","LXXX","XC"];
 // hundred = [100,200,300,400,500,600,700,800,900]
 romanHundred =["C","CC","CCC","CD","D","DC","DCC","DCCC","CM"];
 
-
+console.log(strNum.charAt(1));
+console.log(strNum.charAt(2));
+console.log(strNum.charAt(3));
+console.log(strNum.charAt(4));
 switch( strNum.length){
     case 4:
         count = 0;
@@ -19,12 +22,18 @@ switch( strNum.length){
             romanNumeralsKeeper.push("M")
             count ++;
         }
-        if(strNum.charAt(1) != 0){
-            romanNumeralsKeeper.push(romanHundred.indexOf(strNum.charAt(1)+1));
-
+        if (strNum.charAt(1) != "0"){
+            romanNumeralsKeeper.push(romanHundred[strNum.charAt(1)]);
+            console.log(romanNumeralsKeeper);
         }
+        if (strNum.charAt(2) != "0" ){       
         romanNumeralsKeeper.push(romanTens[strNum.charAt(2+1)]);
-        romanNumeralsKeeper.push(romanOnes[strNum.charAt(3+1)]); 
+        console.log(romanNumeralsKeeper);
+        }
+        if (strNum.charAt(3)  != 0){
+        romanNumeralsKeeper.push(romanOnes[strNum.charAt(3+1)]);
+        console.log(romanNumeralsKeeper); 
+        }
     break;
 
     case 3:                
@@ -46,7 +55,7 @@ switch( strNum.length){
 
 
 number = romanNumeralsKeeper.join("");
-   console.log(number);
+   console.log("roman numeral is equal to " ,number);
     return number;
    }
    
